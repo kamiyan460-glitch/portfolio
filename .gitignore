@@ -1,0 +1,13 @@
+# 作業用の素材。配布物ではないためGitHubには置かない（Dropboxには残る）
+素材/
+
+# 見た目の記録用スクリーンショット。サイト本体では使っていない
+desktop-preview.png
+mobile-preview.png
+
+# OSやDropboxが勝手に作るファイル
+Thumbs.db
+desktop.ini
+.DS_Store
+*の競合コピー*
+*conflicted copy*
