@@ -1,0 +1,975 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta name="robots" content="noindex">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>炭火焼肉 和牛亭 | A5黒毛和牛 福岡市中央区</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            'w-dark':   '#1a1a1a',
+            'w-darker': '#111111',
+            'w-gold':   '#c9a84c',
+            'w-gold2':  '#e8c97a',
+            'w-gold3':  '#a8872a',
+            'w-cream':  '#f5f0e8',
+            'w-gray':   '#2a2a2a',
+          },
+          fontFamily: {
+            serif: ['"Noto Serif JP"', 'serif'],
+            sans:  ['"Noto Sans JP"', 'sans-serif'],
+          }
+        }
+      }
+    }
+  </script>
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Serif+JP:wght@300;400;500;600;700&family=Noto+Sans+JP:wght@300;400;500;700&display=swap" rel="stylesheet">
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    html { scroll-behavior: smooth; }
+    body { font-family: 'Noto Sans JP', sans-serif; background: #1a1a1a; color: #f5f0e8; }
+
+    .hero-overlay {
+      background: linear-gradient(to bottom,
+        rgba(26,26,26,0.2) 0%,
+        rgba(26,26,26,0.55) 55%,
+        rgba(26,26,26,1) 100%);
+    }
+    .gold-line {
+      display: block; width: 56px; height: 1px;
+      background: linear-gradient(to right, transparent, #c9a84c, transparent);
+      margin: 0 auto;
+    }
+    .btn-gold {
+      display: inline-flex; align-items: center; justify-content: center; gap: .5rem;
+      background: linear-gradient(135deg, #c9a84c 0%, #a8872a 100%);
+      color: #1a1a1a; font-weight: 700; font-family: 'Noto Serif JP', serif;
+      padding: .875rem 2.25rem; letter-spacing: .1em;
+      transition: all .3s; border-radius: 1px;
+    }
+    .btn-gold:hover {
+      background: linear-gradient(135deg, #e8c97a 0%, #c9a84c 100%);
+      transform: translateY(-2px);
+      box-shadow: 0 12px 30px rgba(201,168,76,.35);
+    }
+    .btn-outline {
+      display: inline-flex; align-items: center; justify-content: center; gap: .5rem;
+      border: 1px solid #c9a84c; color: #c9a84c;
+      padding: .875rem 2.25rem; letter-spacing: .1em;
+      transition: all .3s; border-radius: 1px;
+    }
+    .btn-outline:hover {
+      background: #c9a84c; color: #1a1a1a;
+      transform: translateY(-2px);
+    }
+    .card {
+      transition: transform .3s ease, box-shadow .3s ease;
+    }
+    .card:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 20px 50px rgba(201,168,76,.18);
+    }
+    .sec-label {
+      display: block; text-align: center;
+      font-size: .65rem; letter-spacing: .35em;
+      color: rgba(201,168,76,.55); margin-bottom: .75rem;
+    }
+    .sec-title {
+      font-family: 'Noto Serif JP', serif;
+      font-size: clamp(1.6rem, 3vw, 2.2rem);
+      color: #c9a84c; text-align: center; margin-bottom: .5rem;
+    }
+    .sec-sub {
+      text-align: center; font-size: .8rem;
+      color: rgba(245,240,232,.45); letter-spacing: .08em; margin-bottom: 3.5rem;
+    }
+    .img-hover { overflow: hidden; }
+    .img-hover img { transition: transform .5s ease; }
+    .img-hover:hover img { transform: scale(1.07); }
+
+    /* Form field error state */
+    .form-field.error { border-color: #f87171 !important; }
+    /* Placeholder color for dark inputs */
+    .form-field::placeholder { color: rgba(245,240,232,.28); }
+
+    /* Scroll fade-in */
+    .fi { opacity: 0; transform: translateY(22px); transition: opacity .65s ease, transform .65s ease; }
+    .fi.show { opacity: 1; transform: none; }
+    .fi2 { opacity: 0; transform: translateY(22px); transition: opacity .65s ease .12s, transform .65s ease .12s; }
+    .fi2.show { opacity: 1; transform: none; }
+    .fi3 { opacity: 0; transform: translateY(22px); transition: opacity .65s ease .24s, transform .65s ease .24s; }
+    .fi3.show { opacity: 1; transform: none; }
+  </style>
+</head>
+<body class="bg-w-dark">
+<div style="position:sticky;top:0;z-index:99999;background:#24599b;color:#fff;font:500 12px/1.6 'Yu Gothic','Meiryo',sans-serif;padding:9px 16px;display:flex;flex-wrap:wrap;gap:6px 18px;align-items:center;justify-content:center;text-align:center">
+<span>これは<strong>架空の店舗を想定した制作サンプル</strong>です。実在する店舗・商品・価格ではありません。</span>
+<a href="../../index.html#works" style="color:#fff;text-decoration:underline;white-space:nowrap">かみりゅうのポートフォリオへ戻る →</a>
+</div>
+
+
+<!-- ========== NAV ========== -->
+<header id="top" class="fixed top-0 inset-x-0 z-50 border-b border-w-gold/15 bg-w-dark/90 backdrop-blur-md">
+  <div class="max-w-7xl mx-auto px-6 h-16 flex items-center justify-between">
+    <a href="#top" class="font-serif text-lg tracking-widest">
+      <span class="text-w-gold">炭火焼肉</span><span class="text-w-cream ml-1">和牛亭</span>
+    </a>
+    <nav class="hidden md:flex items-center gap-8 text-xs tracking-widest text-w-cream/60">
+      <a href="#kodawari" class="hover:text-w-gold transition-colors">こだわり</a>
+      <a href="#course"   class="hover:text-w-gold transition-colors">コース</a>
+      <a href="#menu"     class="hover:text-w-gold transition-colors">メニュー</a>
+      <a href="#room"     class="hover:text-w-gold transition-colors">個室</a>
+      <a href="#voice"    class="hover:text-w-gold transition-colors">お客様の声</a>
+      <a href="#access"   class="hover:text-w-gold transition-colors">アクセス</a>
+      <a href="#contact"  class="hover:text-w-gold transition-colors">ご予約フォーム</a>
+      <a href="#reserve"  class="btn-gold text-xs py-2 px-5">ご予約</a>
+    </nav>
+    <!-- Mobile menu button (decorative) -->
+    <button class="md:hidden flex flex-col gap-1.5" aria-label="menu">
+      <span class="block w-6 h-px bg-w-gold"></span>
+      <span class="block w-6 h-px bg-w-gold"></span>
+      <span class="block w-4 h-px bg-w-gold ml-auto"></span>
+    </button>
+  </div>
+</header>
+
+<!-- ========== HERO ========== -->
+<section class="relative h-screen flex items-center justify-center text-center overflow-hidden">
+  <img
+    src="https://placehold.co/1920x1080/1a1a1a/c9a84c?text=CHARCOAL+WAGYU"
+    alt="炭火焼肉 和牛亭"
+    class="absolute inset-0 w-full h-full object-cover"
+  >
+  <div class="hero-overlay absolute inset-0"></div>
+  <div class="relative z-10 px-6 max-w-3xl">
+    <p class="text-xs tracking-[.35em] text-w-gold/70 mb-7">FUKUOKA CHUO-KU &nbsp;|&nbsp; A5 KUROGE WAGYU</p>
+    <h1 class="font-serif text-5xl sm:text-6xl md:text-7xl text-w-cream leading-tight mb-6">
+      至福の一皿を、<br>あなたに
+    </h1>
+    <span class="gold-line mb-8 block"></span>
+    <p class="text-w-cream/70 text-base md:text-lg font-light leading-relaxed mb-10">
+      産地直送 A5ランク黒毛和牛 × 完全個室<br>
+      <span class="text-sm text-w-cream/50">接待・記念日・特別なひとときを最上の空間で</span>
+    </p>
+    <div class="flex flex-col sm:flex-row items-center justify-center gap-4">
+      <a href="#reserve" class="btn-gold">ご予約はこちら</a>
+      <a href="#course"  class="btn-outline">コースを見る</a>
+    </div>
+  </div>
+  <div class="absolute bottom-8 left-1/2 -translate-x-1/2 text-w-gold/50 animate-bounce">
+    <svg class="w-5 h-5" fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24">
+      <path stroke-linecap="round" stroke-linejoin="round" d="M19 9l-7 7-7-7"/>
+    </svg>
+  </div>
+</section>
+
+<!-- ========== こだわり ========== -->
+<section id="kodawari" class="py-28 px-6 bg-w-dark">
+  <div class="max-w-6xl mx-auto">
+    <span class="sec-label">OUR COMMITMENT</span>
+    <h2 class="sec-title">和牛亭のこだわり</h2>
+    <p class="sec-sub">三つの柱が織りなす、極上の食体験</p>
+
+    <div class="grid md:grid-cols-3 gap-6">
+      <!-- 肉質 -->
+      <div class="card fi bg-w-gray/40 border border-w-gold/12 p-8 text-center rounded-sm">
+        <div class="mx-auto mb-6 w-14 h-14 flex items-center justify-center border border-w-gold/30 rounded-full">
+          <svg class="w-7 h-7 text-w-gold" fill="none" stroke="currentColor" stroke-width="1.4" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round"
+              d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z"/>
+          </svg>
+        </div>
+        <h3 class="font-serif text-xl text-w-gold mb-4">厳選された肉質</h3>
+        <p class="text-w-cream/65 text-sm leading-relaxed">
+          全国有数の産地から産地直送で届けるA5ランク黒毛和牛。脂の甘さと肉の旨みが際立つ最高等級の一頭を、その日のうちに丁寧に仕込みお届けします。
+        </p>
+      </div>
+      <!-- 空間 -->
+      <div class="card fi2 bg-w-gray/40 border border-w-gold/12 p-8 text-center rounded-sm">
+        <div class="mx-auto mb-6 w-14 h-14 flex items-center justify-center border border-w-gold/30 rounded-full">
+          <svg class="w-7 h-7 text-w-gold" fill="none" stroke="currentColor" stroke-width="1.4" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round"
+              d="M3 12l2-2m0 0l7-7 7 7M5 10v10a1 1 0 001 1h3m10-11l2 2m-2-2v10a1 1 0 01-1 1h-3m-6 0a1 1 0 001-1v-4a1 1 0 011-1h2a1 1 0 011 1v4a1 1 0 001 1m-6 0h6"/>
+          </svg>
+        </div>
+        <h3 class="font-serif text-xl text-w-gold mb-4">洗練された空間</h3>
+        <p class="text-w-cream/65 text-sm leading-relaxed">
+          木と石を組み合わせた和モダンな内装。全室完全個室で、接待・記念日・特別なお祝いの場として心ゆくまでお楽しみいただける空間をご用意しています。
+        </p>
+      </div>
+      <!-- おもてなし -->
+      <div class="card fi3 bg-w-gray/40 border border-w-gold/12 p-8 text-center rounded-sm">
+        <div class="mx-auto mb-6 w-14 h-14 flex items-center justify-center border border-w-gold/30 rounded-full">
+          <svg class="w-7 h-7 text-w-gold" fill="none" stroke="currentColor" stroke-width="1.4" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round"
+              d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z"/>
+          </svg>
+        </div>
+        <h3 class="font-serif text-xl text-w-gold mb-4">心からのおもてなし</h3>
+        <p class="text-w-cream/65 text-sm leading-relaxed">
+          スタッフ一同が心を込めてご対応。誕生日サプライズプレートや記念日装飾など、大切なひとときを彩る特別なご要望にも柔軟にお応えします。
+        </p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ========== おすすめコース ========== -->
+<section id="course" class="py-28 px-6 bg-w-darker">
+  <div class="max-w-6xl mx-auto">
+    <span class="sec-label">COURSE MENU</span>
+    <h2 class="sec-title">おすすめコース</h2>
+    <p class="sec-sub">厳選素材が織りなす、三つの美食体験</p>
+
+    <div class="grid md:grid-cols-3 gap-6 items-start">
+
+      <!-- ¥8,800 -->
+      <div class="card fi border border-w-gold/20 rounded-sm overflow-hidden">
+        <div class="relative img-hover">
+          <img src="https://placehold.co/600x380/2a2a1a/c9a84c?text=STANDARD+COURSE"
+               alt="黒毛和牛コース" class="w-full h-44 object-cover">
+          <span class="absolute top-3 left-3 bg-w-gold/90 text-w-dark text-[10px] font-bold px-2.5 py-1 tracking-widest">STANDARD</span>
+        </div>
+        <div class="p-6 bg-w-gray/25">
+          <p class="text-w-gold/60 text-[10px] tracking-[.22em] mb-1">KUROGE WAGYU COURSE</p>
+          <h3 class="font-serif text-lg text-w-cream mb-3">黒毛和牛コース</h3>
+          <p class="text-w-gold font-serif text-3xl mb-1">¥8,800</p>
+          <p class="text-w-cream/35 text-xs mb-5">税込 / お一人様</p>
+          <ul class="space-y-1.5 text-xs text-w-cream/65 mb-6">
+            <li class="flex gap-2"><span class="text-w-gold shrink-0">◆</span>前菜盛り合わせ</li>
+            <li class="flex gap-2"><span class="text-w-gold shrink-0">◆</span>A5黒毛和牛 4種盛り</li>
+            <li class="flex gap-2"><span class="text-w-gold shrink-0">◆</span>野菜・キムチ盛り合わせ</li>
+            <li class="flex gap-2"><span class="text-w-gold shrink-0">◆</span>スープ</li>
+            <li class="flex gap-2"><span class="text-w-gold shrink-0">◆</span>冷麺またはご飯</li>
+            <li class="flex gap-2"><span class="text-w-gold shrink-0">◆</span>デザート</li>
+          </ul>
+          <a href="#reserve" class="btn-outline w-full text-sm py-2.5">このコースを予約</a>
+        </div>
+      </div>
+
+      <!-- ¥13,200 POPULAR -->
+      <div class="card fi2 border-2 border-w-gold rounded-sm overflow-hidden relative">
+        <div class="bg-w-gold text-center py-2">
+          <span class="text-w-dark text-[10px] font-bold tracking-[.25em]">人気 No.1</span>
+        </div>
+        <div class="relative img-hover">
+          <img src="https://placehold.co/600x380/2a1a0a/e8c97a?text=POPULAR+COURSE"
+               alt="特選和牛コース" class="w-full h-44 object-cover">
+          <span class="absolute top-3 left-3 border border-w-gold text-w-gold text-[10px] font-bold px-2.5 py-1 tracking-widest bg-w-dark/70">POPULAR</span>
+        </div>
+        <div class="p-6 bg-w-gray/25">
+          <p class="text-w-gold/60 text-[10px] tracking-[.22em] mb-1">SPECIAL WAGYU COURSE</p>
+          <h3 class="font-serif text-lg text-w-cream mb-3">特選和牛コース</h3>
+          <p class="text-w-gold font-serif text-3xl mb-1">¥13,200</p>
+          <p class="text-w-cream/35 text-xs mb-5">税込 / お一人様</p>
+          <ul class="space-y-1.5 text-xs text-w-cream/65 mb-6">
+            <li class="flex gap-2"><span class="text-w-gold shrink-0">◆</span>前菜・お造り盛り合わせ</li>
+            <li class="flex gap-2"><span class="text-w-gold shrink-0">◆</span>A5黒毛和牛 6種盛り</li>
+            <li class="flex gap-2"><span class="text-w-gold shrink-0">◆</span>特選タン・ロース・サーロイン</li>
+            <li class="flex gap-2"><span class="text-w-gold shrink-0">◆</span>野菜・キムチ・スープ</li>
+            <li class="flex gap-2"><span class="text-w-gold shrink-0">◆</span>冷麺またはご飯</li>
+            <li class="flex gap-2"><span class="text-w-gold shrink-0">◆</span>自家製デザート</li>
+          </ul>
+          <a href="#reserve" class="btn-gold w-full text-sm py-2.5">このコースを予約</a>
+        </div>
+      </div>
+
+      <!-- ¥19,800 -->
+      <div class="card fi3 border border-w-gold/20 rounded-sm overflow-hidden">
+        <div class="relative img-hover">
+          <img src="https://placehold.co/600x380/1a1a2a/c9a84c?text=PREMIUM+COURSE"
+               alt="極上プレミアムコース" class="w-full h-44 object-cover">
+          <span class="absolute top-3 left-3 border border-w-gold text-w-gold text-[10px] font-bold px-2.5 py-1 tracking-widest bg-w-dark/70">PREMIUM</span>
+        </div>
+        <div class="p-6 bg-w-gray/25">
+          <p class="text-w-gold/60 text-[10px] tracking-[.22em] mb-1">PREMIUM COURSE</p>
+          <h3 class="font-serif text-lg text-w-cream mb-3">極上プレミアムコース</h3>
+          <p class="text-w-gold font-serif text-3xl mb-1">¥19,800</p>
+          <p class="text-w-cream/35 text-xs mb-5">税込 / お一人様</p>
+          <ul class="space-y-1.5 text-xs text-w-cream/65 mb-6">
+            <li class="flex gap-2"><span class="text-w-gold shrink-0">◆</span>前菜・旬の素材のお造り</li>
+            <li class="flex gap-2"><span class="text-w-gold shrink-0">◆</span>A5最高級和牛 食べ比べ8種</li>
+            <li class="flex gap-2"><span class="text-w-gold shrink-0">◆</span>希少部位（シャトーブリアン等）</li>
+            <li class="flex gap-2"><span class="text-w-gold shrink-0">◆</span>季節の副菜・スープ</li>
+            <li class="flex gap-2"><span class="text-w-gold shrink-0">◆</span>〆の逸品（選択制）</li>
+            <li class="flex gap-2"><span class="text-w-gold shrink-0">◆</span>特製デザートプレート</li>
+          </ul>
+          <a href="#reserve" class="btn-outline w-full text-sm py-2.5">このコースを予約</a>
+        </div>
+      </div>
+    </div>
+    <p class="text-center text-w-cream/30 text-xs mt-8">※ 表示価格は税込価格です。別途サービス料10%を頂戴いたします。</p>
+  </div>
+</section>
+
+<!-- ========== メニューハイライト ========== -->
+<section id="menu" class="py-28 px-6 bg-w-dark">
+  <div class="max-w-6xl mx-auto">
+    <span class="sec-label">MENU HIGHLIGHT</span>
+    <h2 class="sec-title">メニューハイライト</h2>
+    <p class="sec-sub">旬の素材と職人の技が生み出す、珠玉の一品</p>
+
+    <div class="grid grid-cols-2 md:grid-cols-3 gap-3 md:gap-4">
+      <!-- 1 -->
+      <div class="card img-hover relative rounded-sm overflow-hidden fi">
+        <img src="https://placehold.co/600x450/2a1a0a/c9a84c?text=SIRLOIN"
+             alt="特選サーロイン" class="w-full aspect-[4/3] object-cover">
+        <div class="absolute inset-0 bg-gradient-to-t from-w-dark/85 via-transparent to-transparent"></div>
+        <div class="absolute bottom-0 left-0 right-0 p-4">
+          <p class="font-serif text-w-cream text-sm md:text-base">特選サーロイン</p>
+          <p class="text-w-gold text-xs">A5黒毛和牛</p>
+        </div>
+      </div>
+      <!-- 2 -->
+      <div class="card img-hover relative rounded-sm overflow-hidden fi2">
+        <img src="https://placehold.co/600x450/1a1a0a/e8c97a?text=TONGUE"
+             alt="和牛タン塩" class="w-full aspect-[4/3] object-cover">
+        <div class="absolute inset-0 bg-gradient-to-t from-w-dark/85 via-transparent to-transparent"></div>
+        <div class="absolute bottom-0 left-0 right-0 p-4">
+          <p class="font-serif text-w-cream text-sm md:text-base">和牛タン塩</p>
+          <p class="text-w-gold text-xs">厚切り仕立て</p>
+        </div>
+      </div>
+      <!-- 3 -->
+      <div class="card img-hover relative rounded-sm overflow-hidden fi3">
+        <img src="https://placehold.co/600x450/2a1a1a/c9a84c?text=ROAST"
+             alt="極上ロース" class="w-full aspect-[4/3] object-cover">
+        <div class="absolute inset-0 bg-gradient-to-t from-w-dark/85 via-transparent to-transparent"></div>
+        <div class="absolute bottom-0 left-0 right-0 p-4">
+          <p class="font-serif text-w-cream text-sm md:text-base">極上ロース</p>
+          <p class="text-w-gold text-xs">霜降り最高等級</p>
+        </div>
+      </div>
+      <!-- 4 -->
+      <div class="card img-hover relative rounded-sm overflow-hidden fi">
+        <img src="https://placehold.co/600x450/1a1a2a/c9a84c?text=CHATEAUBRIAND"
+             alt="シャトーブリアン" class="w-full aspect-[4/3] object-cover">
+        <div class="absolute inset-0 bg-gradient-to-t from-w-dark/85 via-transparent to-transparent"></div>
+        <div class="absolute bottom-0 left-0 right-0 p-4">
+          <p class="font-serif text-w-cream text-sm md:text-base">シャトーブリアン</p>
+          <p class="text-w-gold text-xs">希少部位・数量限定</p>
+        </div>
+      </div>
+      <!-- 5 -->
+      <div class="card img-hover relative rounded-sm overflow-hidden fi2">
+        <img src="https://placehold.co/600x450/2a2a1a/e8c97a?text=KALBI"
+             alt="特上カルビ" class="w-full aspect-[4/3] object-cover">
+        <div class="absolute inset-0 bg-gradient-to-t from-w-dark/85 via-transparent to-transparent"></div>
+        <div class="absolute bottom-0 left-0 right-0 p-4">
+          <p class="font-serif text-w-cream text-sm md:text-base">特上カルビ</p>
+          <p class="text-w-gold text-xs">とろける食感</p>
+        </div>
+      </div>
+      <!-- 6 -->
+      <div class="card img-hover relative rounded-sm overflow-hidden fi3">
+        <img src="https://placehold.co/600x450/1a2a1a/c9a84c?text=DESSERT"
+             alt="特製デザートプレート" class="w-full aspect-[4/3] object-cover">
+        <div class="absolute inset-0 bg-gradient-to-t from-w-dark/85 via-transparent to-transparent"></div>
+        <div class="absolute bottom-0 left-0 right-0 p-4">
+          <p class="font-serif text-w-cream text-sm md:text-base">特製デザートプレート</p>
+          <p class="text-w-gold text-xs">記念日仕様も承ります</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ========== 個室紹介 ========== -->
+<section id="room" class="py-28 px-6 bg-w-darker">
+  <div class="max-w-6xl mx-auto">
+    <span class="sec-label">PRIVATE ROOMS</span>
+    <h2 class="sec-title">完全個室のご案内</h2>
+    <p class="sec-sub">大切な方との時間を、最上の空間でお楽しみください</p>
+
+    <div class="grid md:grid-cols-3 gap-6">
+      <!-- 2名 -->
+      <div class="card fi border border-w-gold/18 rounded-sm overflow-hidden">
+        <div class="relative img-hover">
+          <img src="https://placehold.co/600x400/1a1a2a/c9a84c?text=ROOM+FOR+2"
+               alt="2名用個室" class="w-full h-48 object-cover">
+          <div class="absolute inset-0 bg-w-dark/35"></div>
+          <div class="absolute bottom-4 left-5">
+            <span class="font-serif text-w-gold text-2xl">2名様用</span>
+          </div>
+        </div>
+        <div class="p-6 bg-w-gray/20">
+          <h3 class="font-serif text-base text-w-cream mb-1">Special Room — <span class="text-w-gold">SAKURA</span></h3>
+          <p class="text-w-cream/40 text-xs mb-4 tracking-widest">カップル・記念日に最適</p>
+          <ul class="space-y-2 text-xs text-w-cream/65">
+            <li class="flex gap-2.5"><span class="text-w-gold">◆</span>完全防音・プライベート空間</li>
+            <li class="flex gap-2.5"><span class="text-w-gold">◆</span>記念日装飾オプションあり</li>
+            <li class="flex gap-2.5"><span class="text-w-gold">◆</span>サプライズ演出対応可</li>
+            <li class="flex gap-2.5"><span class="text-w-gold">◆</span>全3室</li>
+          </ul>
+        </div>
+      </div>
+
+      <!-- 4名 -->
+      <div class="card fi2 border border-w-gold/30 rounded-sm overflow-hidden">
+        <div class="relative img-hover">
+          <img src="https://placehold.co/600x400/2a1a1a/e8c97a?text=ROOM+FOR+4"
+               alt="4名用個室" class="w-full h-48 object-cover">
+          <div class="absolute inset-0 bg-w-dark/35"></div>
+          <div class="absolute bottom-4 left-5">
+            <span class="font-serif text-w-gold text-2xl">4名様用</span>
+          </div>
+        </div>
+        <div class="p-6 bg-w-gray/20">
+          <h3 class="font-serif text-base text-w-cream mb-1">Executive Room — <span class="text-w-gold">KEYAKI</span></h3>
+          <p class="text-w-cream/40 text-xs mb-4 tracking-widest">ビジネス接待に最適</p>
+          <ul class="space-y-2 text-xs text-w-cream/65">
+            <li class="flex gap-2.5"><span class="text-w-gold">◆</span>高品質音響・調光設備完備</li>
+            <li class="flex gap-2.5"><span class="text-w-gold">◆</span>専任スタッフが担当</li>
+            <li class="flex gap-2.5"><span class="text-w-gold">◆</span>お席の模様替え対応可</li>
+            <li class="flex gap-2.5"><span class="text-w-gold">◆</span>全4室</li>
+          </ul>
+        </div>
+      </div>
+
+      <!-- 8名 -->
+      <div class="card fi3 border border-w-gold/18 rounded-sm overflow-hidden">
+        <div class="relative img-hover">
+          <img src="https://placehold.co/600x400/1a2a1a/c9a84c?text=ROOM+FOR+8"
+               alt="8名用個室" class="w-full h-48 object-cover">
+          <div class="absolute inset-0 bg-w-dark/35"></div>
+          <div class="absolute bottom-4 left-5">
+            <span class="font-serif text-w-gold text-2xl">8名様用</span>
+          </div>
+        </div>
+        <div class="p-6 bg-w-gray/20">
+          <h3 class="font-serif text-base text-w-cream mb-1">Grand Room — <span class="text-w-gold">MATSU</span></h3>
+          <p class="text-w-cream/40 text-xs mb-4 tracking-widest">大人数接待・宴会に</p>
+          <ul class="space-y-2 text-xs text-w-cream/65">
+            <li class="flex gap-2.5"><span class="text-w-gold">◆</span>プロジェクター・モニター完備</li>
+            <li class="flex gap-2.5"><span class="text-w-gold">◆</span>バリアフリー対応</li>
+            <li class="flex gap-2.5"><span class="text-w-gold">◆</span>ウェルカムボード設置可</li>
+            <li class="flex gap-2.5"><span class="text-w-gold">◆</span>全2室</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ========== お客様の声 ========== -->
+<section id="voice" class="py-28 px-6 bg-w-dark">
+  <div class="max-w-6xl mx-auto">
+    <span class="sec-label">CUSTOMER VOICE</span>
+    <h2 class="sec-title">お客様の声</h2>
+    <p class="sec-sub">特別な夜の記憶を、お客様から</p>
+
+    <div class="grid md:grid-cols-3 gap-6">
+      <!-- 声1 -->
+      <div class="card fi bg-w-gray/30 border border-w-gold/10 p-8 rounded-sm">
+        <div class="text-w-gold text-base mb-5">★★★★★</div>
+        <p class="text-w-cream/78 text-sm leading-relaxed mb-6">
+          「会社の大切な接待で利用しました。個室の雰囲気が素晴らしく、お肉の質も期待以上。スタッフの方の気配りも完璧で、お客様にも大変喜んでいただけました。また必ず利用します。」
+        </p>
+        <div class="flex items-center gap-3 border-t border-w-gold/10 pt-4">
+          <div class="w-9 h-9 rounded-full bg-w-gray/70 border border-w-gold/20 flex items-center justify-center font-serif text-w-gold text-sm shrink-0">田</div>
+          <div>
+            <p class="text-w-cream text-sm font-medium">田中 様</p>
+            <p class="text-w-cream/38 text-xs">接待 / 4名様 / 特選和牛コース</p>
+          </div>
+        </div>
+      </div>
+      <!-- 声2 -->
+      <div class="card fi2 bg-w-gray/30 border border-w-gold/10 p-8 rounded-sm">
+        <div class="text-w-gold text-base mb-5">★★★★★</div>
+        <p class="text-w-cream/78 text-sm leading-relaxed mb-6">
+          「結婚記念日に2名個室を予約。サプライズのデコレーションをお願いしたところ、当日は想像以上の演出で感動しました。お肉の霜降りが美しく、口の中でとろける食感。最高の夜になりました。」
+        </p>
+        <div class="flex items-center gap-3 border-t border-w-gold/10 pt-4">
+          <div class="w-9 h-9 rounded-full bg-w-gray/70 border border-w-gold/20 flex items-center justify-center font-serif text-w-gold text-sm shrink-0">佐</div>
+          <div>
+            <p class="text-w-cream text-sm font-medium">佐藤 様 ご夫妻</p>
+            <p class="text-w-cream/38 text-xs">記念日 / 2名様 / プレミアムコース</p>
+          </div>
+        </div>
+      </div>
+      <!-- 声3 -->
+      <div class="card fi3 bg-w-gray/30 border border-w-gold/10 p-8 rounded-sm">
+        <div class="text-w-gold text-base mb-5">★★★★★</div>
+        <p class="text-w-cream/78 text-sm leading-relaxed mb-6">
+          「父の古希のお祝いで家族8名で利用。広い個室で賑やかに過ごせました。A5和牛は初めて食べましたが本当においしくて、父が涙を流して喜んでくれました。家族全員が大満足の夕べでした。」
+        </p>
+        <div class="flex items-center gap-3 border-t border-w-gold/10 pt-4">
+          <div class="w-9 h-9 rounded-full bg-w-gray/70 border border-w-gold/20 flex items-center justify-center font-serif text-w-gold text-sm shrink-0">山</div>
+          <div>
+            <p class="text-w-cream text-sm font-medium">山本 様</p>
+            <p class="text-w-cream/38 text-xs">お祝い / 8名様 / プレミアムコース</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ========== アクセス・営業時間 ========== -->
+<section id="access" class="py-28 px-6 bg-w-darker">
+  <div class="max-w-6xl mx-auto">
+    <span class="sec-label">ACCESS &amp; HOURS</span>
+    <h2 class="sec-title">アクセス・営業時間</h2>
+    <p class="sec-sub">福岡市中央区の中心部に位置する、アクセス抜群の立地</p>
+
+    <div class="grid md:grid-cols-2 gap-8 items-start">
+      <!-- Map -->
+      <div class="fi rounded-sm overflow-hidden border border-w-gold/15">
+        <img src="https://placehold.co/800x500/222222/c9a84c?text=ACCESS+MAP"
+             alt="店舗地図" class="w-full h-72 md:h-96 object-cover">
+        <div class="bg-w-gray/30 px-5 py-4 text-xs text-w-cream/55 flex items-center gap-2">
+          <span class="text-w-gold">📍</span>
+          福岡県福岡市中央区天神2丁目×番×号 ○○ビル 2F
+        </div>
+      </div>
+
+      <!-- Info -->
+      <div class="fi2 space-y-7">
+        <!-- 店舗情報 -->
+        <div class="border-b border-w-gold/10 pb-7">
+          <h3 class="font-serif text-w-gold text-base mb-4 tracking-wider">店舗情報</h3>
+          <ul class="space-y-3 text-sm text-w-cream/75">
+            <li class="flex gap-3">
+              <span class="text-w-gold shrink-0">📍</span>
+              <span>福岡県福岡市中央区天神2丁目×番×号<br>
+                <span class="text-w-cream/45 text-xs">○○ビル 2F</span>
+              </span>
+            </li>
+            <li class="flex gap-3">
+              <span class="text-w-gold shrink-0">🚃</span>
+              <span>地下鉄空港線「天神駅」2番出口より徒歩3分</span>
+            </li>
+            <li class="flex gap-3">
+              <span class="text-w-gold shrink-0">📞</span>
+              <a href="tel:0920000000" class="hover:text-w-gold transition-colors">092-XXX-XXXX</a>
+            </li>
+          </ul>
+        </div>
+
+        <!-- 営業時間 -->
+        <div class="border-b border-w-gold/10 pb-7">
+          <h3 class="font-serif text-w-gold text-base mb-4 tracking-wider">営業時間</h3>
+          <table class="w-full text-sm text-w-cream/75 border-separate" style="border-spacing:0 .6rem">
+            <tr>
+              <td class="pr-4 text-w-cream/50 text-xs whitespace-nowrap">月〜木・日曜</td>
+              <td>17:00 〜 23:00 <span class="text-w-cream/35 text-xs">(L.O. 22:00)</span></td>
+            </tr>
+            <tr>
+              <td class="pr-4 text-w-cream/50 text-xs whitespace-nowrap">金・土・祝前日</td>
+              <td>17:00 〜 24:00 <span class="text-w-cream/35 text-xs">(L.O. 23:00)</span></td>
+            </tr>
+            <tr>
+              <td class="pr-4 text-w-cream/35 text-xs whitespace-nowrap">定休日</td>
+              <td class="text-w-cream/40">火曜日</td>
+            </tr>
+          </table>
+        </div>
+
+        <!-- 駐車場 -->
+        <div>
+          <h3 class="font-serif text-w-gold text-base mb-4 tracking-wider">駐車場</h3>
+          <ul class="space-y-2 text-sm text-w-cream/75">
+            <li class="flex gap-2.5"><span class="text-w-gold shrink-0">◆</span>提携駐車場あり（2時間無料）</li>
+            <li class="flex gap-2.5"><span class="text-w-gold shrink-0">◆</span>○○パーキング（徒歩1分・20台）</li>
+            <li class="flex gap-2.5"><span class="text-w-gold shrink-0">◆</span>バレーパーキング対応可（要予約）</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ========== 予約 CTA ========== -->
+<section id="reserve" class="relative py-28 px-6 overflow-hidden">
+  <div class="absolute inset-0">
+    <img src="https://placehold.co/1920x700/1a1a1a/c9a84c?text=WAGYU-TEI"
+         alt="" class="w-full h-full object-cover opacity-15">
+    <div class="absolute inset-0" style="background:linear-gradient(to bottom,#111 0%,rgba(26,26,26,.9) 50%,#111 100%)"></div>
+  </div>
+
+  <div class="relative z-10 max-w-3xl mx-auto text-center">
+    <span class="sec-label">RESERVATION</span>
+    <h2 class="font-serif text-4xl md:text-5xl text-w-cream mb-5">ご予約・お問い合わせ</h2>
+    <span class="gold-line mb-7 block"></span>
+    <p class="text-w-cream/60 text-sm md:text-base leading-relaxed mb-10">
+      特別な日のご予約は、お早めに。<br>
+      コース内容のカスタマイズ・サプライズ演出など、お気軽にご相談ください。
+    </p>
+
+    <div class="grid sm:grid-cols-2 gap-5 max-w-xl mx-auto">
+      <!-- 電話 -->
+      <a href="tel:0920000000"
+         class="flex items-center justify-center gap-4 bg-w-gold hover:bg-w-gold2 py-5 px-6 rounded-sm transition-all duration-300 hover:shadow-2xl group"
+         style="box-shadow:0 0 0 rgba(201,168,76,0)">
+        <svg class="w-5 h-5 text-w-dark shrink-0" fill="currentColor" viewBox="0 0 20 20">
+          <path d="M2 3a1 1 0 011-1h2.153a1 1 0 01.986.836l.74 4.435a1 1 0 01-.54 1.06l-1.548.773a11.037 11.037 0 006.105 6.105l.774-1.548a1 1 0 011.059-.54l4.435.74a1 1 0 01.836.986V17a1 1 0 01-1 1h-2C7.82 18 2 12.18 2 5V3z"/>
+        </svg>
+        <div class="text-left">
+          <p class="text-w-dark text-xs font-medium tracking-wider">お電話でのご予約</p>
+          <p class="text-w-dark font-serif text-xl font-bold">092-XXX-XXXX</p>
+        </div>
+      </a>
+
+      <!-- ネット -->
+      <a href="#contact"
+         class="flex items-center justify-center gap-4 border-2 border-w-gold text-w-gold hover:bg-w-gold hover:text-w-dark py-5 px-6 rounded-sm transition-all duration-300">
+        <svg class="w-5 h-5 shrink-0" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+          <path stroke-linecap="round" stroke-linejoin="round"
+            d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z"/>
+        </svg>
+        <div class="text-left">
+          <p class="text-xs font-medium tracking-wider">ネットでのご予約</p>
+          <p class="font-serif text-xl font-bold">24時間受付中</p>
+        </div>
+      </a>
+    </div>
+
+    <p class="text-w-cream/30 text-xs mt-8 tracking-wide">
+      ※ 完全予約制となっております。当日のご来店はお断りする場合がございます。
+    </p>
+  </div>
+</section>
+
+<!-- ========== お問い合わせフォーム ========== -->
+<section id="contact" class="py-28 px-6 bg-w-dark">
+  <div class="max-w-3xl mx-auto">
+    <span class="sec-label">CONTACT FORM</span>
+    <h2 class="sec-title">ご予約・お問い合わせ</h2>
+    <p class="sec-sub">フォームよりご予約・お問い合わせを承ります</p>
+
+    <!-- サンクスメッセージ（送信後に表示） -->
+    <div id="thanks-msg" class="hidden text-center py-16">
+      <div class="inline-flex items-center justify-center w-16 h-16 rounded-full border border-w-gold mb-6">
+        <svg class="w-8 h-8 text-w-gold" fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24">
+          <path stroke-linecap="round" stroke-linejoin="round" d="M4.5 12.75l6 6 9-13.5"/>
+        </svg>
+      </div>
+      <h3 class="font-serif text-2xl text-w-gold mb-4">送信が完了しました</h3>
+      <p class="text-w-cream/65 text-sm leading-loose">
+        お問い合わせいただきありがとうございます。<br>
+        内容を確認の上、2営業日以内にご連絡いたします。<br>
+        <span class="text-w-cream/40 text-xs block mt-2">お急ぎの場合はお電話にてお問い合わせください。</span>
+      </p>
+    </div>
+
+    <!-- 予約フォーム -->
+    <form id="contact-form"
+          action="https://formspree.io/f/あなたのID"
+          method="POST"
+          novalidate
+          class="bg-w-gray/20 border border-w-gold/12 rounded-sm p-8 md:p-10 space-y-6">
+
+      <!-- お名前 -->
+      <div>
+        <label for="f-name" class="block text-xs tracking-widest text-w-cream/65 mb-2">
+          お名前 <span class="text-red-400">*</span>
+        </label>
+        <input type="text" id="f-name" name="name" placeholder="例：山田 太郎"
+               class="form-field w-full bg-w-darker border border-w-gold/20 text-w-cream py-3 px-4 rounded-sm text-sm focus:outline-none focus:border-w-gold/60 transition-colors">
+        <p id="err-name" class="form-error text-red-400 text-xs mt-1.5"></p>
+      </div>
+
+      <!-- 電話番号 / メールアドレス -->
+      <div class="grid sm:grid-cols-2 gap-5">
+        <div>
+          <label for="f-phone" class="block text-xs tracking-widest text-w-cream/65 mb-2">
+            電話番号 <span class="text-red-400">*</span>
+          </label>
+          <input type="tel" id="f-phone" name="phone" placeholder="例：092-000-0000"
+                 class="form-field w-full bg-w-darker border border-w-gold/20 text-w-cream py-3 px-4 rounded-sm text-sm focus:outline-none focus:border-w-gold/60 transition-colors">
+          <p id="err-phone" class="form-error text-red-400 text-xs mt-1.5"></p>
+        </div>
+        <div>
+          <label for="f-email" class="block text-xs tracking-widest text-w-cream/65 mb-2">
+            メールアドレス <span class="text-red-400">*</span>
+          </label>
+          <input type="email" id="f-email" name="email" placeholder="例：example@mail.com"
+                 class="form-field w-full bg-w-darker border border-w-gold/20 text-w-cream py-3 px-4 rounded-sm text-sm focus:outline-none focus:border-w-gold/60 transition-colors">
+          <p id="err-email" class="form-error text-red-400 text-xs mt-1.5"></p>
+        </div>
+      </div>
+
+      <!-- ご利用日 / ご利用時間 -->
+      <div class="grid sm:grid-cols-2 gap-5">
+        <div>
+          <label for="f-date" class="block text-xs tracking-widest text-w-cream/65 mb-2">ご利用日</label>
+          <input type="date" id="f-date" name="date"
+                 class="form-field w-full bg-w-darker border border-w-gold/20 text-w-cream py-3 px-4 rounded-sm text-sm focus:outline-none focus:border-w-gold/60 transition-colors"
+                 style="color-scheme:dark">
+          <p id="err-date" class="form-error text-red-400 text-xs mt-1.5"></p>
+        </div>
+        <div>
+          <label for="f-time" class="block text-xs tracking-widest text-w-cream/65 mb-2">ご利用時間</label>
+          <div class="relative">
+            <select id="f-time" name="time"
+                    class="form-field w-full bg-w-darker border border-w-gold/20 text-w-cream py-3 px-4 pr-9 rounded-sm text-sm focus:outline-none focus:border-w-gold/60 transition-colors appearance-none"
+                    style="background-color:#111111">
+              <option value="" style="background:#111111">-- 時間を選択 --</option>
+              <option value="17:00" style="background:#111111">17:00</option>
+              <option value="17:30" style="background:#111111">17:30</option>
+              <option value="18:00" style="background:#111111">18:00</option>
+              <option value="18:30" style="background:#111111">18:30</option>
+              <option value="19:00" style="background:#111111">19:00</option>
+              <option value="19:30" style="background:#111111">19:30</option>
+              <option value="20:00" style="background:#111111">20:00</option>
+              <option value="20:30" style="background:#111111">20:30</option>
+              <option value="21:00" style="background:#111111">21:00</option>
+              <option value="21:30" style="background:#111111">21:30</option>
+              <option value="22:00" style="background:#111111">22:00</option>
+            </select>
+            <span class="pointer-events-none absolute right-3 top-1/2 -translate-y-1/2 text-w-gold">
+              <svg class="w-3.5 h-3.5" fill="currentColor" viewBox="0 0 20 20">
+                <path d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z"/>
+              </svg>
+            </span>
+          </div>
+        </div>
+      </div>
+
+      <!-- ご利用人数 -->
+      <div>
+        <label for="f-guests" class="block text-xs tracking-widest text-w-cream/65 mb-2">ご利用人数</label>
+        <div class="relative">
+          <select id="f-guests" name="guests"
+                  class="form-field w-full bg-w-darker border border-w-gold/20 text-w-cream py-3 px-4 pr-9 rounded-sm text-sm focus:outline-none focus:border-w-gold/60 transition-colors appearance-none"
+                  style="background-color:#111111">
+            <option value="" style="background:#111111">-- 人数を選択 --</option>
+            <option value="1名" style="background:#111111">1名</option>
+            <option value="2名" style="background:#111111">2名</option>
+            <option value="3名" style="background:#111111">3名</option>
+            <option value="4名" style="background:#111111">4名</option>
+            <option value="5名" style="background:#111111">5名</option>
+            <option value="6名" style="background:#111111">6名</option>
+            <option value="7名" style="background:#111111">7名</option>
+            <option value="8名" style="background:#111111">8名</option>
+            <option value="9名" style="background:#111111">9名</option>
+            <option value="10名" style="background:#111111">10名</option>
+            <option value="11〜15名" style="background:#111111">11〜15名</option>
+            <option value="16〜20名" style="background:#111111">16〜20名</option>
+          </select>
+          <span class="pointer-events-none absolute right-3 top-1/2 -translate-y-1/2 text-w-gold">
+            <svg class="w-3.5 h-3.5" fill="currentColor" viewBox="0 0 20 20">
+              <path d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z"/>
+            </svg>
+          </span>
+        </div>
+      </div>
+
+      <!-- ご利用目的 -->
+      <div>
+        <span class="block text-xs tracking-widest text-w-cream/65 mb-3">ご利用目的</span>
+        <div class="flex flex-wrap gap-x-7 gap-y-3">
+          <label class="flex items-center gap-2.5 cursor-pointer group">
+            <input type="radio" name="purpose" value="接待" class="w-4 h-4 accent-w-gold">
+            <span class="text-sm text-w-cream/75 group-hover:text-w-cream transition-colors">接待</span>
+          </label>
+          <label class="flex items-center gap-2.5 cursor-pointer group">
+            <input type="radio" name="purpose" value="記念日" class="w-4 h-4 accent-w-gold">
+            <span class="text-sm text-w-cream/75 group-hover:text-w-cream transition-colors">記念日</span>
+          </label>
+          <label class="flex items-center gap-2.5 cursor-pointer group">
+            <input type="radio" name="purpose" value="家族" class="w-4 h-4 accent-w-gold">
+            <span class="text-sm text-w-cream/75 group-hover:text-w-cream transition-colors">家族</span>
+          </label>
+          <label class="flex items-center gap-2.5 cursor-pointer group">
+            <input type="radio" name="purpose" value="その他" class="w-4 h-4 accent-w-gold">
+            <span class="text-sm text-w-cream/75 group-hover:text-w-cream transition-colors">その他</span>
+          </label>
+        </div>
+      </div>
+
+      <!-- 個室希望 -->
+      <div>
+        <span class="block text-xs tracking-widest text-w-cream/65 mb-3">個室希望</span>
+        <div class="flex flex-wrap gap-x-7 gap-y-3">
+          <label class="flex items-center gap-2.5 cursor-pointer group">
+            <input type="radio" name="private_room" value="あり" class="w-4 h-4 accent-w-gold">
+            <span class="text-sm text-w-cream/75 group-hover:text-w-cream transition-colors">あり</span>
+          </label>
+          <label class="flex items-center gap-2.5 cursor-pointer group">
+            <input type="radio" name="private_room" value="なし" class="w-4 h-4 accent-w-gold">
+            <span class="text-sm text-w-cream/75 group-hover:text-w-cream transition-colors">なし</span>
+          </label>
+          <label class="flex items-center gap-2.5 cursor-pointer group">
+            <input type="radio" name="private_room" value="どちらでも" checked class="w-4 h-4 accent-w-gold">
+            <span class="text-sm text-w-cream/75 group-hover:text-w-cream transition-colors">どちらでも</span>
+          </label>
+        </div>
+      </div>
+
+      <!-- アレルギー・苦手な食材 -->
+      <div>
+        <label for="f-allergy" class="block text-xs tracking-widest text-w-cream/65 mb-2">
+          アレルギー・苦手な食材
+          <span class="text-w-cream/35 ml-1 font-normal tracking-normal">(任意)</span>
+        </label>
+        <textarea id="f-allergy" name="allergy" rows="3"
+                  placeholder="例：えびアレルギー、にんにく苦手など"
+                  class="form-field w-full bg-w-darker border border-w-gold/20 text-w-cream py-3 px-4 rounded-sm text-sm focus:outline-none focus:border-w-gold/60 transition-colors resize-y"></textarea>
+      </div>
+
+      <!-- 送信ボタン -->
+      <div class="pt-2">
+        <button type="submit" id="submit-btn" class="btn-gold w-full py-4 text-sm tracking-widest">
+          送信する
+        </button>
+        <p class="text-center text-w-cream/30 text-xs mt-4 leading-relaxed">
+          ご入力いただいた情報はご予約確認のみに使用し、第三者に提供することはありません。<br>
+          Formspree無料プランにより月50件まで受付可能です。満席の場合はお電話にてご連絡ください。
+        </p>
+      </div>
+    </form>
+  </div>
+</section>
+
+<!-- ========== FOOTER ========== -->
+<footer class="bg-w-dark border-t border-w-gold/10 py-10 px-6">
+  <div class="max-w-6xl mx-auto flex flex-col md:flex-row items-center justify-between gap-5">
+    <a href="#top" class="font-serif text-xl tracking-widest">
+      <span class="text-w-gold">炭火焼肉</span><span class="text-w-cream ml-1">和牛亭</span>
+    </a>
+    <nav class="flex flex-wrap justify-center gap-x-7 gap-y-2 text-xs text-w-cream/45 tracking-widest">
+      <a href="#kodawari" class="hover:text-w-gold transition-colors">こだわり</a>
+      <a href="#course"   class="hover:text-w-gold transition-colors">コース</a>
+      <a href="#menu"     class="hover:text-w-gold transition-colors">メニュー</a>
+      <a href="#room"     class="hover:text-w-gold transition-colors">個室</a>
+      <a href="#voice"    class="hover:text-w-gold transition-colors">お客様の声</a>
+      <a href="#access"   class="hover:text-w-gold transition-colors">アクセス</a>
+      <a href="#contact"  class="hover:text-w-gold transition-colors">ご予約フォーム</a>
+    </nav>
+    <p class="text-w-cream/25 text-xs">© 2024 炭火焼肉 和牛亭</p>
+  </div>
+</footer>
+
+<script>
+  /* Smooth scroll — offset for fixed header */
+  document.querySelectorAll('a[href^="#"]').forEach(a => {
+    a.addEventListener('click', e => {
+      const id = a.getAttribute('href');
+      if (id === '#') return;
+      const target = document.querySelector(id);
+      if (!target) return;
+      e.preventDefault();
+      const offset = document.querySelector('header').offsetHeight;
+      window.scrollTo({ top: target.getBoundingClientRect().top + scrollY - offset, behavior: 'smooth' });
+    });
+  });
+
+  /* Fade-in on scroll */
+  const io = new IntersectionObserver(entries => {
+    entries.forEach(en => { if (en.isIntersecting) en.target.classList.add('show'); });
+  }, { threshold: 0.12 });
+  document.querySelectorAll('.fi, .fi2, .fi3').forEach(el => io.observe(el));
+
+  /* ---- Contact form validation & Formspree submission ---- */
+  (function () {
+    const form = document.getElementById('contact-form');
+    if (!form) return;
+
+    // Set today as minimum selectable date
+    const dateEl = document.getElementById('f-date');
+    if (dateEl) dateEl.min = new Date().toISOString().split('T')[0];
+
+    function setErrMsg(id, msg) {
+      const el = document.getElementById(id);
+      if (el) el.textContent = msg;
+    }
+
+    function clearAll() {
+      form.querySelectorAll('.form-error').forEach(el => { el.textContent = ''; });
+      form.querySelectorAll('.form-field').forEach(el => { el.classList.remove('error'); });
+    }
+
+    function flagErr(fieldId, errId, msg) {
+      const f = document.getElementById(fieldId);
+      if (f) f.classList.add('error');
+      setErrMsg(errId, msg);
+    }
+
+    form.addEventListener('submit', async function (e) {
+      e.preventDefault();
+      clearAll();
+      let valid = true;
+
+      // お名前（必須）
+      const name = document.getElementById('f-name');
+      if (!name.value.trim()) {
+        flagErr('f-name', 'err-name', 'お名前をご入力ください');
+        valid = false;
+      }
+
+      // 電話番号（必須・形式チェック）
+      const phone = document.getElementById('f-phone');
+      const stripped = phone.value.replace(/[\s\-－]/g, '');
+      if (!phone.value.trim()) {
+        flagErr('f-phone', 'err-phone', '電話番号をご入力ください');
+        valid = false;
+      } else if (!/^0\d{9,10}$/.test(stripped)) {
+        flagErr('f-phone', 'err-phone', '正しい電話番号形式でご入力ください（例：092-000-0000）');
+        valid = false;
+      }
+
+      // メールアドレス（必須・形式チェック）
+      const email = document.getElementById('f-email');
+      if (!email.value.trim()) {
+        flagErr('f-email', 'err-email', 'メールアドレスをご入力ください');
+        valid = false;
+      } else if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email.value.trim())) {
+        flagErr('f-email', 'err-email', '正しいメールアドレスをご入力ください');
+        valid = false;
+      }
+
+      // ご利用日（過去日チェック）
+      if (dateEl && dateEl.value) {
+        const sel = new Date(dateEl.value + 'T00:00:00');
+        const today = new Date(); today.setHours(0, 0, 0, 0);
+        if (sel < today) {
+          flagErr('f-date', 'err-date', '過去の日付は選択できません');
+          valid = false;
+        }
+      }
+
+      if (!valid) {
+        const first = form.querySelector('.form-field.error');
+        if (first) first.scrollIntoView({ behavior: 'smooth', block: 'center' });
+        return;
+      }
+
+      // Formspree へ送信
+      const btn = document.getElementById('submit-btn');
+      btn.disabled = true;
+      btn.textContent = '送信中...';
+
+      try {
+        const res = await fetch(form.action, {
+          method: 'POST',
+          body: new FormData(form),
+          headers: { Accept: 'application/json' }
+        });
+
+        if (res.ok) {
+          form.style.display = 'none';
+          const thanks = document.getElementById('thanks-msg');
+          thanks.classList.remove('hidden');
+          thanks.scrollIntoView({ behavior: 'smooth', block: 'center' });
+        } else {
+          const data = await res.json().catch(() => ({}));
+          const msg = (data.errors || []).map(er => er.message).join('\n') || '送信に失敗しました。';
+          alert(msg + '\nお電話にてお問い合わせください。');
+          btn.disabled = false;
+          btn.textContent = '送信する';
+        }
+      } catch (_) {
+        alert('通信エラーが発生しました。\nお電話にてお問い合わせください。');
+        btn.disabled = false;
+        btn.textContent = '送信する';
+      }
+    });
+  })();
+</script>
+</body>
+</html>
