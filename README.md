@@ -39,10 +39,15 @@ FormSubmitの通常POST送信を使用。入力チェックと同意チェック
 本文はdist/index.html、送信完了ページはdist/thanks.html、見た目はdist/style.css、ナビゲーションとコピー操作と戻り先の設定はdist/script.jsを編集してください。
 公開する場合はdistフォルダの中身のみをアップロードし、素材や作業用の記録は含めないでください。
 
-## 公開（未実施）
-GitHub Pagesで公開する予定です。現時点ではこのフォルダはGitリポジトリになっておらず（`.git` が無い）、作業PCにgitも入っていません。公開するには、gitの導入・GitHubアカウント・リポジトリの作成が必要です。
+## 公開
+GitHub Pagesで公開します。`main` ブランチにpushすると `.github/workflows/pages.yml` が動き、**`dist/` の中身だけ**がサイトとして公開されます。`素材/` とプレビュー画像は `.gitignore` で除外してあるため、リポジトリにも公開サイトにも含まれません（Dropboxには残ります）。
 
-`dist/` の中身がサイトのルートになるよう公開してください（`素材/` やプレビュー画像は公開対象に含めない）。
+GitHub側で一度だけ、Settings → Pages → Source を **GitHub Actions** に設定する必要があります。
+
+### 残っている作業
+- GitHubにリポジトリを作り、リモートとして登録してpushする
+- Settings → Pages の Source を GitHub Actions にする
+- 公開後、フォームの有効化とエイリアス差し替え（上記「問い合わせフォーム」参照）
 
 ## 内容の根拠
 - 第2の脳/日記/2026-08-30.md：出品準備の仕組み
