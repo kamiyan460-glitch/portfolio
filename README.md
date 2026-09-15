@@ -16,22 +16,14 @@ FormSubmitの通常POST送信を使用。入力チェックと同意チェック
 
 公式説明：https://formsubmit.co/
 
-### 公開後にやること（未実施）
-1. フォームから自分で一度テスト送信する
-2. `kamiyan460@gmail.com` に届くFormSubmitの確認メールのリンクを押して有効化する
-3. 改めて送信し、受信・返信先が正しいこと、`thanks.html` に戻ることを確認する
-
-有効化するまで送信しても届きません。ファイルを直接開く方式（`file://`）では動かないため、HTTP(S)で表示して利用してください。
-
-### 有効化後に差し替える（未実施）
-現状は `dist/index.html` の `form action` にメールアドレスがそのまま入っており、HTMLのソースから読めます。迷惑メールの収集対象になるため、有効化時にFormSubmitから発行されるランダムな文字列（エイリアス）に差し替えてください。
+### 有効化とエイリアスへの差し替え（完了）
+FormSubmitの確認メールで有効化済みです。`form action` はFormSubmitが発行したエイリアスに差し替えてあり、HTMLのソースにメールアドレスは載っていません。
 
 ```
-変更前：<form action="https://formsubmit.co/kamiyan460@gmail.com" method="POST">
-変更後：<form action="https://formsubmit.co/ランダムな文字列" method="POST">
+<form action="https://formsubmit.co/（エイリアス）" method="POST">
 ```
 
-なお `dist/index.html` の `mailto:` リンクと `dist/script.js` のコピー機能は、来訪者に見せるための記載なのでそのままにします。
+なお `dist/index.html` の `mailto:` リンクと `dist/script.js` のコピー機能にはアドレスが入っていますが、こちらは来訪者に見せるための記載なのでそのままにします。
 
 メールリンクは端末のメールアプリを開きます。メールアカウント自体を新規作成したものではありません。
 
@@ -42,12 +34,11 @@ FormSubmitの通常POST送信を使用。入力チェックと同意チェック
 ## 公開
 GitHub Pagesで公開します。`main` ブランチにpushすると `.github/workflows/pages.yml` が動き、**`dist/` の中身だけ**がサイトとして公開されます。`素材/` とプレビュー画像は `.gitignore` で除外してあるため、リポジトリにも公開サイトにも含まれません（Dropboxには残ります）。
 
-GitHub側で一度だけ、Settings → Pages → Source を **GitHub Actions** に設定する必要があります。
+- 公開URL：https://kamiyan460-glitch.github.io/portfolio/
+- リポジトリ：https://github.com/kamiyan460-glitch/portfolio
+- Settings → Pages → Source は **GitHub Actions** に設定済み
 
-### 残っている作業
-- GitHubにリポジトリを作り、リモートとして登録してpushする
-- Settings → Pages の Source を GitHub Actions にする
-- 公開後、フォームの有効化とエイリアス差し替え（上記「問い合わせフォーム」参照）
+更新の手順は `git add -A` → `git commit -m "説明"` → `git push`。pushの数十秒後にサイトへ反映されます。
 
 ## 内容の根拠
 - 第2の脳/日記/2026-08-30.md：出品準備の仕組み
