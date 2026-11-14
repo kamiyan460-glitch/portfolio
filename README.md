@@ -40,6 +40,15 @@ GitHub Pagesで公開します。`main` ブランチにpushすると `.github/wo
 
 更新の手順は `git add -A` → `git commit -m "説明"` → `git push`。pushの数十秒後にサイトへ反映されます。
 
+## AI動画ポートフォリオ（dist/video/）
+2026-11-14 追加。トップ（代表作3本）は `dist/video/index.html`、全作品の一覧は `dist/video/more.html`。
+見た目は `dist/style.css` を引き継ぎ、動画まわりだけ `dist/video/video.css` に足している。
+
+- 公開URL：https://kamiyan460-glitch.github.io/portfolio/video/
+- 動画は `dist/video/media/`。元の動画は `claude_team/ai-video/作品/` にあり、ffmpeg で Web 用に軽くしたもの（H.264・横は1280px以下・faststart）
+- フォームは本体と同じ FormSubmit のエイリアス。件名は「【AI動画ポートフォリオ】」。送信後は `dist/thanks.html` に戻る
+- 制作日数は本人回答（2026-11-14）。長さ・使ったツールは各作品の生成ログから
+
 ## 内容の根拠
 - 第2の脳/日記/2026-08-30.md：出品準備の仕組み
 - ブログ/入稿/CLAUDE.md：WordPressへの下書き入稿・検査
